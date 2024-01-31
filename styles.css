@@ -10,7 +10,7 @@ body {
 }
 
 body, section {
-    background: linear-gradient(45deg, #001f3f, #003366); /* Dark blue gradient */
+    background: linear-gradient(45deg, #2c3e50, #003366); /* Dark blue gradient */
     color: #001f3f;
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden; /* Hide horizontal overflow only */
@@ -125,6 +125,10 @@ footer {
     font-size: 40px;
     color: #333; /* Dark gray icon color */
     margin-right: 20px;
+}
+
+.home-item p {
+    color: #f5f5f5;
 }
 
 .experience-item, .education-item {

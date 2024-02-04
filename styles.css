@@ -290,7 +290,7 @@ footer {
 	--d: 2500ms;
 	--angle: 90deg;
 	--c1: #e74c3c;
-	--c2: rgba(168, 239, 255, 0.1);
+	--c2: rgba(168, 239, 255, 0.073);
 }
 
 .box {
@@ -317,4 +317,24 @@ footer {
 	100% {
 		--angle: 450deg;
 	}
+}
+
+.box2 {
+    position: relative;
+    border: 0.10rem solid;
+    border-radius: 12px; /* Set your desired border-radius */
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+  
+.box2:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 0.35rem solid;
+    border-image: conic-gradient(from var(--angle), #1852a9, #6a32f6d5,#32f6f6ec, #26b5fdd5) 30;
+    animation: borderRotate var(--d) linear infinite backwards;
 }

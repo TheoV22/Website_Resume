@@ -325,7 +325,15 @@ footer {
 	}
 }
 
+.skills-image-container {
+    margin-top: 100px;
+}
 
+/* Adjust the size of the skills image */
+.skills-image-container img {
+    width: calc(70% - 40px);
+    height: calc(70% - 40px);
+}
   
 
 

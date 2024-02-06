@@ -5,21 +5,10 @@ body {
     padding: 0;
     box-sizing: border-box;
     line-height: 1.6;
-    background-color: #f5f5f5;
-    color: #333;
-}
-
-body, section {
-    background: linear-gradient(45deg, #2c3e50, #003366); /* Dark blue gradient */
-    color: #001f3f;
     font-family: 'Roboto', sans-serif;
-    overflow-x: hidden; /* Hide horizontal overflow only */
-    animation: backgroundAnimation 10s infinite linear alternate;
-}
-
-@keyframes backgroundAnimation {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
+    overflow-x: hidden;
+    background: linear-gradient(45deg, #2c3e50f0, #003366); /* Dark blue gradient */
+    color: white;
 }
 
 body::before {
@@ -34,14 +23,14 @@ body::before {
     opacity: 0.2; /* Adjust the opacity for a subtle effect */
 }
 
+
 nav {
     background-color: #2c3e50;
-    color: white;
     text-align: center;
     position: fixed;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    color: white;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     top: 0;
     padding: 20px 0px;
@@ -61,40 +50,42 @@ nav li {
 
 nav a {
     position: relative;
-    color: white;
     text-decoration: none;
     text-transform: uppercase;
     padding-bottom: 5px;
     transition: color 0.3s ease;
+    color: white;
+
 }
 
 nav a:hover {
     color: #e74c3c;
 }
 
+
 section {
+    background: linear-gradient(45deg, #2c3e50f0, #003366);
+    color: #001f3f;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden; /* Hide horizontal overflow only */
     padding: 80px 20px;
     text-align: center;
-    background-color: #fff; /* White background */
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin: 20px 0;
     transition: box-shadow 0.3s ease;
 }
 
-section:hover {
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
-}
-
 section h1, section h2 {
-    color: #f5f5f5; /* Dark gray text */
+    color: white;
     margin-bottom: 20px;
 }
 
 section p {
-    color: #666; /* Gray text */
+    color: #666;
     font-size: 16px;
 }
+
 
 footer {
     background-color: #2c3e50;
@@ -105,6 +96,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
 
 .list-inline i {
     font-size: 30px;
@@ -127,8 +119,9 @@ footer {
     margin-right: 20px;
 }
 
+
 .home-item p {
-    color: #f5f5f5;
+    color: white;
 }
 
 .experience-item, .education-item {
@@ -149,6 +142,7 @@ footer {
     margin-right: 20px;
 }
 
+
 .experience-list, .education-list {
     list-style: none;
     padding: 0;
@@ -160,14 +154,19 @@ footer {
 .experience-list li, .education-list li {
     margin: 20px;
     padding: 20px;
-    background-color: #fff;
+    color: white;
+    background-color: white;
     border-radius: 12px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     text-align: left;
     width: calc(33.33% - 40px);
     flex: 1 0 auto;
-    max-width: 600px; /* Set a maximum width */
+    max-width: 600px;
 }
+
+.education-list li, .hobbies-list li {
+    box-shadow: 5px -2px 30px 10px var(--c3);
+}
+
 
 @media (max-width: 1200px) {
     .experience-list li, .education-list li {
@@ -224,7 +223,7 @@ footer {
 .skills-list li {
     margin: 20px;
     padding: 20px;
-    background-color: #fff;
+    background-color: white;
     border-radius: 12px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -258,9 +257,8 @@ footer {
 .hobbies-list li {
     margin: 20px;
     padding: 20px;
-    background-color: #fff;
+    background-color: white;
     border-radius: 12px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: calc(33.33% - 40px);
     display: flex;
@@ -281,6 +279,7 @@ footer {
     margin: 0;
 }
 
+
 @property --angle {
   syntax: '<angle>';
   initial-value: 90deg;
@@ -291,26 +290,33 @@ footer {
 	--angle: 90deg;
 	--c1: #e74c3c;
 	--c2: rgba(168, 239, 255, 0.073);
+    --c3 : #4865e0;
 }
 
-.box {
+.box2, .box {
     position: relative;
-    border: 0.10rem solid;
-    border-radius: 12px; /* Set your desired border-radius */
     overflow: hidden;
-    background-color: #f5f5f5;
+    opacity: 0.8;
 }
-  
-.box:before {
+
+.box:before, .box2:before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    border: 0.35rem solid;
+    border: 0.25rem solid;
+}
+
+.box:before {    
     border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
     animation: borderRotate var(--d) linear infinite forwards;
+}
+
+.box2:before {
+    border-image: conic-gradient(from var(--angle), #1852a9, #6a32f6d5,#32f6f6ec, #26b5fdd5) 30;
+    animation: borderRotate var(--d) linear infinite backwards;
 }
 
 @keyframes borderRotate {
@@ -319,22 +325,7 @@ footer {
 	}
 }
 
-.box2 {
-    position: relative;
-    border: 0.10rem solid;
-    border-radius: 12px; /* Set your desired border-radius */
-    overflow: hidden;
-    background-color: #f5f5f5;
-}
+
   
-.box2:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 0.35rem solid;
-    border-image: conic-gradient(from var(--angle), #1852a9, #6a32f6d5,#32f6f6ec, #26b5fdd5) 30;
-    animation: borderRotate var(--d) linear infinite backwards;
-}
+
+

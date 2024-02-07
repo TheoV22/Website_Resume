@@ -23,7 +23,6 @@ body::before {
     opacity: 0.2; /* Adjust the opacity for a subtle effect */
 }
 
-
 nav {
     background-color: #2c3e50;
     text-align: center;
@@ -55,13 +54,11 @@ nav a {
     padding-bottom: 5px;
     transition: color 0.3s ease;
     color: white;
-
 }
 
 nav a:hover {
     color: #e74c3c;
 }
-
 
 section {
     background: linear-gradient(45deg, #2c3e50f0, #003366);
@@ -86,6 +83,9 @@ section p {
     font-size: 16px;
 }
 
+.home-item p {
+    color: white;
+}
 
 footer {
     background-color: #2c3e50;
@@ -109,6 +109,7 @@ footer {
     color: #e74c3c; /* Highlight color on hover */
 }
 
+
 .icon, .details {
     margin-right: 20px;
 }
@@ -116,12 +117,13 @@ footer {
 .icon {
     font-size: 40px;
     color: #333; /* Dark gray icon color */
-    margin-right: 20px;
+    margin-top: auto; 
+    margin-bottom: auto;
 }
 
-
-.home-item p {
-    color: white;
+.details {
+    text-align: left;
+    flex-grow: 1; /* Allow details to grow and take remaining space */
 }
 
 .experience-item, .education-item {
@@ -130,18 +132,6 @@ footer {
     align-items: center; /* Align items to the center vertically */
     margin-bottom: 20px;
 }
-
-.details {
-    text-align: left;
-    flex-grow: 1; /* Allow details to grow and take remaining space */
-}
-
-.icon {
-    font-size: 30px;
-    color: #333; /* Dark gray icon color */
-    margin-right: 20px;
-}
-
 
 .experience-list, .education-list {
     list-style: none;
@@ -334,6 +324,13 @@ footer {
     width: calc(70% - 40px);
     height: calc(70% - 40px);
 }
-  
 
+.map-image-container {
+    margin-top: 50px;
+}
+  
+.map-image-container img {
+    width: calc(70% - 40px);
+    height: calc(60% - 40px);
+}
 

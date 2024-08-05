@@ -1,287 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <title>Van Eccelpoel Théo - Personal Resume Website</title>
+    <title>Welcome - Van Eccelpoel Théo</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/25ec158c21.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-HnnfR7TGOYb8D+BdS9xgA8hvHTeg+MZnLNXKxIb+UTR7+Ljqu/GR6q6ypUKHc9JC+TccP6j7I3y4q2ogFZBUvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <style>
-        /* Add your new styles here */
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+    <script type="module" src="threeScene.js"></script>
 </head>
-
 <body>
+    <script type="module" src="threeScene.js"></script>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="#experience">Experiences</a></li>
-            <li><a href="#education">Educations</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#hobbies">Hobbies</a></li>
-            <li><a href="#contact">Contacts</a></li>
-        </ul>
-    </nav>
-
-    <div class="content-wrapper">
-        <!-- Home Section -->
-        <section id="home">
-            <div class="home-item">
-                <h1>Van Eccelpoel Théo</h1>
-                <p>Graduated from IÉSEG School of Management with a MSc in Management</p>
-                <p>Currently a student in the MSc in Data Sciences and Business Analytics from ESSEC and CentraleSupélec</p>
+    <div id="canvas_container">
+        <div class="landing-page">
+            <div class="landing-content">
+                <h1>Welcome to My Personal Website</h1>
+                <p>Explore my professional experiences, education, skills, hobbies, and contact information.</p>
+                <button class="cta-button" onclick="location.href='home.html'"> Enter </button>
             </div>
-            <div>
-                <ul class="list-inline contact-list">
-                    <li>
-                        <a href="mailto:tvaneccelpoel@neuf.fr" target="_blank">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/théo-van-eccelpoel/" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/TheoV22" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <hr width="50%" size="2">
-            <div class="map-image-container">
-                <h2>My International Coverage</h2>
-                <img src="mapGraphic.png" alt="International Experiences" title="International Experiences Icon">
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience">
-            <div>
-                <h2>Experiences</h2>
-                <ul class="experience-list">
-                    <li class="box2">
-                        <div class="experience-item">
-                            <div class="icon"><i class="fas fa-chart-line"></i></div>
-                            <div class="details">
-                                <p><strong>Data Analyst</strong></p>
-                                <p><strong>EDF</strong><br>
-                                    <strong>4 months internship, Lyon</strong><br>
-                                    <br>
-                                    - Management and improvement of a world nuclear power plants database<br>
-                                    - Development of a custom ETL using Python webscraping and data pipelines<br>
-                                    - Creation of PowerBI dashboards empowering data to facilitate Direction's decision making<br>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="box2">
-                        <div class="experience-item">
-                            <div class="icon"><i class="fas fa-chart-line"></i></div>
-                            <div class="details">
-                                <p><strong>Data Consultant</strong></p>
-                                <p><strong>SII — Thales</strong><br><strong>6 months internship, Lille</strong><br><br>
-                                    - Translation of cross-functional business needs into KPIs (HR, finance, project management)<br>
-                                    - ETL creation with SQL, Dataiku and Python<br>
-                                    - Creation of PowerBI dashboards according to business requirements<br>
-                                    - Project management using Agile/SCRUM methodology</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="box2">
-                        <div class="experience-item">
-                            <div class="icon"><i class="fa-solid fa-chart-simple"></i></div>
-                            <div class="details">
-                                <p><strong>Entrepreneur in Residence</strong></p>
-                                <p><strong>Rocket Internet China</strong><br><strong>4 months internship, online</strong><br><br>
-                                    - Translation of e-commerce business needs into KPIs, variables and scripts<br>
-                                    - Research and analysis of star products and suitable suppliers<br>
-                                    - Webscraping using Scrapy and Selenium<br>
-                                    - Process automation with VPS, AWS RDS, Lambda, EC2 & S3<br>
-                                    - Decision-making under uncertainty (SCRUM methodology)</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="box2">
-                        <div class="experience-item">
-                            <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
-                            <div class="details">
-                                <p><strong>Member of the Professional Relationships department</strong></p>
-                                <p><strong>IÉSEG Finance</strong><br><strong>4 months associative experience, Lille</strong><br><br>
-                                    - Canvassing new partners/sponsors for the IÉSEG Finance student association.<br>
-                                    - Creation and organization of events in collaboration with our partners: company visits, trading competitions, conferences, trip to London...</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="box2">
-                        <div class="experience-item">
-                            <div class="icon"><i class="fa-solid fa-user-group"></i></div>
-                            <div class="details">
-                                <p><strong>CSR Consultant</strong></p>
-                                <p><strong>ALDI Nord</strong><br><strong>4 months project, Lille</strong><br><br>
-                                    Creative and strategic innovations in communications and responsible consumption</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="box2">
-                        <div class="experience-item">
-                            <div class="icon"><i class="fa-solid fa-handshake"></i></div>
-                            <div class="details">
-                                <p><strong>Sales workforce</strong></p>
-                                <p><strong>Capfun</strong><br><strong>3 months internship, Montblanc</strong><br><br>
-                                    Sales, supplier relations and customer needs analysis in a multicultural team</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="box2">
-                        <div class="experience-item">
-                            <div class="icon"><i class="fa-solid fa-utensils"></i></div>
-                            <div class="details">
-                                <p><strong>Polyvalent worker</strong></p>
-                                <p><strong>Walt Disney World</strong><br><strong>2 months job, Orlando</strong><br><br>
-                                    Multi-skilled fast-food worker in a multicultural team</p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education">
-            <div>
-                <h2>Educations</h2>
-                <ul class="education-list">
-                    <li>
-                        <div class="education-item">
-                            <div class="icon"><i class="fas fa-graduation-cap"></i></div>
-                            <div class="details">
-                                <p><strong>Essec & CentraleSupélec</strong></p>
-                                <p>MSc in Data Sciences & Business Analytics<br>
-                                    QS: #3 worldwide in Business Analytics<br><br>
-                                    Courses : statistics, linear algebra, calculus, AI for business, data analysis</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="education-item">
-                            <div class="icon"><i class="fas fa-graduation-cap"></i></div>
-                            <div class="details">
-                                <p><strong>IÉSEG School of Management</strong></p>
-                                <p>MSc in Management<br>
-                                    AMBA, EQUIS, AACSB accreditations<br> <br>
-                                    Courses : agile methodologies, data visualization, economics, finance, HRM (Cohort rank: 18/800)</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="education-item">
-                            <div class="icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
-                            <div class="details">
-                                <p><strong>Bocconi University</strong></p>
-                                <p>Exchange Semester - Data Sciences and Business Analytics track<br>
-                                    QS: #6 worldwide in Business and Management<br> <br>
-                                    Courses : econometrics for big data, business analytics, python, SQL, blockchain</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="education-item">
-                            <div class="icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
-                            <div class="details">
-                                <p><strong>The Hong Kong Polytechnic University</strong></p>
-                                <p>Exchange Semester - Marketing & Finance<br>
-                                    EQUIS, AACSB accreditations<br> <br>
-                                    Courses: marketing, accounting, finance, management of information systems
-                                </p>
-                            </div>
-                        </div>
-
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <div>
-                <h2>Skills</h2>
-                <ul class="skills-list">
-                    <li class="box" style="--c1: #FFE05A; "><i class="fab fa-python" style="color: #FFE05A; "></i>Python</li>
-                    <li class="box" style="--c1: #146AC2; "><i class="fas fa-database" style="color: #146AC2; "></i>SQL</li>
-                    <li class="box" style="--c1: #659BD2; "><i class="fas fa-code" style="color: #659BD2; "></i>C++</li>
-                    <li class="box" style="--c1: #21A365; "><i class="fas fa-file-excel" style="color: #21A365; "></i>Excel</li>
-                    <li class="box" style="--c1: #E0A40D; "><i class="fas fa-chart-bar" style="color: #E0A40D; "></i>PowerBI</li>
-                    <li class="box" style="--c1: #C72035; "><i class="fas fa-chart-pie" style="color: #C72035; "></i>Tableau</li>
-                    <li class="box" style="--c1: #27B1AC; "><i class="fa-solid fa-magnifying-glass-chart" style="color: #27B1AC; "></i>Dataiku</li>
-                    <li class="box" style="--c1: #D70033; "><i class="fa-solid fa-table" style="color: #D70033; "></i>SPSS</li>
-                    <li class="box" style="--c1: #1C97EE; "><i class="fa-brands fa-docker" style="color: #1C97EE; "></i>Docker (beginner)</li>
-                    <li class="box" style="--c1: #F7971F; "><i class="fab fa-aws" style="color: #F7971F; "></i>AWS EC2, Lambda, S3</li>
-                    <li class="box" style="--c1: #101214; "><i class="fa-solid fa-code-compare" style="color: #101214; "></i>GitHub, MS office</li>
-                </ul>
-                <div class="skills-image-container">
-                    <img src="skillsGraphic.png" alt="Skills" title="Skills Icon">
-                </div>
-            </div>
-        </section>
-
-        <!-- Hobbies Section -->
-        <section id="hobbies">
-            <div>
-                <h2>Hobbies</h2>
-                <ul class="hobbies-list">
-                    <li><i class="fa-solid fa-microchip"></i>New Technologies & Innovations</li>
-                    <li><i class="fa-solid fa-arrow-trend-up"></i>Finance</li>
-                    <li><i class="fa-solid fa-medal"></i>Tennis</li>
-                    <li><i class="fa-solid fa-fire-flame-curved"></i>Jujitsu</li>
-                    <li><i class="fas fa-skiing"></i>Ski</li>
-                    <li><i class="fa-solid fa-film"></i>Japanese Animations</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <div>
-                <h2>Contacts</h2>
-                <ul class="list-inline contact-list">
-                    <li class="shadow">
-                        <a href="mailto:tvaneccelpoel@neuf.fr" target="_blank">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </li>
-                    <li class="shadow">
-                        <a href="https://www.linkedin.com/in/théo-van-eccelpoel/" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </li>
-                    <li class="shadow">
-                        <a href="https://github.com/TheoV22" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        
+        </div>
     </div>
+    <script type="module" src="threeScene.js"></script>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 - Van Eccelpoel Théo. All rights reserved.</p>
-    </footer>
 
-    <script>
-        // Add any additional JavaScript here
-    </script>
 
 </body>
-
 </html>

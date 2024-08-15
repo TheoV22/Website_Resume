@@ -14,14 +14,14 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="experience.html">Experiences</a></li>
             <li><a href="education.html">Educations</a></li>
-            <li><a href="skills.html">Skills</a></li>
+            <li><a href="skills.html" style="color: #e74c3c;">Skills</a></li>
             <li><a href="hobbies.html">Hobbies</a></li>
             <li><a href="contact.html">Contacts</a></li>
         </ul>
     </nav>
 
         <!-- Skills Section -->
-    <section id="skills">
+    <section id="skills" style="background: none;">
             <div>
                 <h2>Skills</h2>
                 <ul class="skills-list">
@@ -37,11 +37,17 @@
                     <li class="box" style="--c1: #F7971F; "><i class="fab fa-aws" style="color: #F7971F; "></i>AWS EC2, Lambda, S3</li>
                     <li class="box" style="--c1: #101214; "><i class="fa-solid fa-code-compare" style="color: #101214; "></i>GitHub, MS office</li>
                 </ul>
-                <div class="skills-image-container">
-                    <img src="skillsGraphic.png" alt="Skills" title="Skills Icon">
-                </div>
+            </div>
+            <div class="skills-image-container">
+                <img src="skillsGraphic.png" alt="Skills" title="Skills Icon">
             </div>
     </section>
+
+    <canvas id="background"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplex-noise@2.4.0/simplex-noise.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
+    <script type="module" src="wave_background.js"></script>
 
     <!-- Footer Section -->
     <footer>

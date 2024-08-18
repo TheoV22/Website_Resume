@@ -213,6 +213,15 @@ footer {
     flex-grow: 1; /* Allow details to grow and take remaining space */
 }
 
+.icon img {
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    vertical-align: middle;
+}
+
 
 /* ===== Experience and Education styles ===== */
 

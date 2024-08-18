@@ -37,7 +37,7 @@ function init() {
     // OrbitControls
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 1;
+    controls.autoRotateSpeed = 0.5;
     controls.maxDistance = 350;
     controls.minDistance = 150;
     controls.enablePan = false;
@@ -69,7 +69,7 @@ function init() {
     const starPositions = [];
     for (let i = 0; i < 50; i++) {
         const particleStar = randomPointSphere(150); 
-        particleStar.velocity = THREE.MathUtils.randInt(50, 200);
+        particleStar.velocity = THREE.MathUtils.randInt(25, 100);
         particleStar.startX = particleStar.x;
         particleStar.startY = particleStar.y;
         particleStar.startZ = particleStar.z;

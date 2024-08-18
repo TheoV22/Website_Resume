@@ -41,16 +41,19 @@ function App(conf) {
     updateSize();
     window.addEventListener('resize', updateSize, false);
 
+    // Commenting out the mousemove event listener to disable mouse tracking
+    /*
     document.addEventListener('mousemove', e => {
-      const v = new THREE.Vector3();
-      camera.getWorldDirection(v);
-      v.normalize();
-      mousePlane.normal = v;
-      mouse.x = (e.clientX / width) * 2 - 1;
-      mouse.y = - (e.clientY / height) * 2 + 1;
-      raycaster.setFromCamera(mouse, camera);
-      raycaster.ray.intersectPlane(mousePlane, mousePosition);
+        const v = new THREE.Vector3();
+        camera.getWorldDirection(v);
+        v.normalize();
+        mousePlane.normal = v;
+        mouse.x = (e.clientX / width) * 2 - 1;
+        mouse.y = - (e.clientY / height) * 2 + 1;
+        raycaster.setFromCamera(mouse, camera);
+        raycaster.ray.intersectPlane(mousePlane, mousePosition);
     });
+    */
 
     initScene();
     animate();
@@ -107,11 +110,12 @@ function App(conf) {
     let gArray = plane.geometry.attributes.position.array;
     const time = Date.now() * 0.0002;
     for (let i = 0; i < gArray.length; i += 3) {
-      gArray[i + 2] = simplex.noise4D(gArray[i] / conf.xyCoef, gArray[i + 1] / conf.xyCoef, time, mouse.x + mouse.y) * conf.zCoef;
+        // Removing mouse influence by setting it to a constant value (0)
+        gArray[i + 2] = simplex.noise4D(gArray[i] / conf.xyCoef, gArray[i + 1] / conf.xyCoef, time, 0) * conf.zCoef;
     }
     plane.geometry.attributes.position.needsUpdate = true;
-    // plane.geometry.computeBoundingSphere();
-  }
+}
+
 
   function animateLights() {
     const time = Date.now() * 0.001;
